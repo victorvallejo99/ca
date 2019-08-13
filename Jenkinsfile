@@ -3,6 +3,7 @@ pipeline {
 
     tools {
         gradle "Gradle 5.0"
+        jkd "jdk9"
     }
 
     stages {
