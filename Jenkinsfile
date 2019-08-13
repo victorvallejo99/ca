@@ -1,11 +1,11 @@
 pipeline {
     agent any
 
-    stages {
+    tools {
+        gradle "Gradle 5.0"
+    }
 
-        tools {
-            gradle "Gradle 5.0"
-        }
+    stages {
 
         stage ('Unit Test') {
             steps {
