@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.1.6.RELEASE'
     id 'java'
+    id "org.sonarqube" version "2.6"
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -17,4 +18,12 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-web-services'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+sonarqube{
+    properties{
+        property "sonar.projectName", "Quind - Basic Calculator"
+        property "sonar.projectKey", "quind-basicCalculator.key"
+        property "sonar.jacoco.reportPath", "${project.buildDir}/jacoco/jacocoTest.exec"
+    }
 }
