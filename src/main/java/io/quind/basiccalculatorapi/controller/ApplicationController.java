@@ -13,7 +13,7 @@ public class ApplicationController {
 
     @RequestMapping("/")
     public String index() {
-        return "Greetings from Spring Boot!";
+        return "Hello Basic Calculator!";
     }
 
     @RequestMapping("/shutdown")
