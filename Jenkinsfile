@@ -7,19 +7,19 @@ pipeline {
             gradle "Gradle 5.0"
         }
 
-        stage ('') {
+        stage ('Unit Test') {
             steps {
                 sh "gradle clean test"
             }
         }
 
-        stage ('') {
+        stage ('Build') {
             steps {
                 sh "gradle build -x test"
             }
         }
 
-        stage('') {
+        stage('Static Code Analysis') {
             steps {
                 withSonarQubeEnv('sonarqube') {
                     sh "gradle --info sonarqube -x test"
